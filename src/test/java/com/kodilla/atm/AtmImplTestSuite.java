@@ -7,11 +7,11 @@ public class AtmImplTestSuite {
     @Test
     public void testCashOutNoCash() {
         //Given
-
-        //When
         AtmImpl sutAtm = new AtmImpl(100);
+        //When
+        boolean sutAtmResult = sutAtm.cashOut(500);
         //Then
-        Assert.assertFalse(sutAtm.cashOut(500));
+        Assert.assertFalse(sutAtmResult);
     }
 
     @Test
@@ -20,7 +20,8 @@ public class AtmImplTestSuite {
         AtmImpl sutAtm = new AtmImpl(10);
         //When
         sutAtm.cashIn(40);
+        boolean sutAtmResult = sutAtm.cashOut(50);
         //Then
-        Assert.assertTrue(sutAtm.cashOut(50));
+        Assert.assertTrue(sutAtmResult);
     }
 }
